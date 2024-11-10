@@ -15,7 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        _logger.LogInformation('Welcome to lunch and learn');
+        _logger.LogInformation('Welcome to lunch and learn 2');
         return View();
     }
 
