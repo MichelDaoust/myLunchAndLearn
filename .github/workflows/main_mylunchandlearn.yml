@@ -51,15 +51,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_49CE343602E24A97AC1B957F314C1F6C }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_05D4B44A855A47E9AD3B1B06D6E61697 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C4C5A992F97D4D0DB8C69452F4CB6909 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_510ACC77CDE8400F99D0590E466D8DD8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_09A201E5A5424C31BE18DA7062F5F39D }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C1D9E8CEA31241F985BA77D8A77EE921 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'myLunchAndLearn'
-          slot-name: 'dev'
+          slot-name: 'Production'
           package: .
           
