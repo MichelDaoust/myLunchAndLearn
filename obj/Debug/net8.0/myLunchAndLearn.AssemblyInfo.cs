@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("myLunchAndLearn")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0bb1284a6268db4620be26c3fde6e986d25ea14e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fe7e95aa21a44050e26a008447796653d84d6f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("myLunchAndLearn")]
 [assembly: System.Reflection.AssemblyTitleAttribute("myLunchAndLearn")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
