@@ -39,11 +39,11 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: webapp
-        slot-name: 'dev'  
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
     - name: Deploy to Azure WebApp
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        slot-name: 'dev'  
         publish-profile: ${{ secrets.myLunchAndLearn_2A04 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
