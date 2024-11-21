@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "t52+BIoAAw9le2dQSWRgWRSKPY9KqASxWXi+X6An6iSie0MIWSnz/1mhj5OUXL5lhZ3Uphzw/HNTfnEWXA9tZg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\michel.daoust\\source\\repos\\myLunchAndLearn\\myLunchAndLearn.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\michel.daoust\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\8.0.10\\microsoft.netcore.app.host.linux-x64.8.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
