@@ -3,6 +3,7 @@ on:
   push:
     branches:
     - main
+    - feature/*
 env:
   AZURE_WEBAPP_NAME: myLunchAndLearn
   AZURE_WEBAPP_PACKAGE_PATH: ./published
@@ -33,6 +34,7 @@ jobs:
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
   deploy:
     runs-on: ubuntu-latest
+    environment: production
     needs: build
     steps:
     - name: Download artifact from build job
@@ -40,10 +42,20 @@ jobs:
       with:
         name: webapp
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-    - name: Deploy to Azure WebApp
+    - name: Deploy to Azure WebApp (Production)
+      if: github.ref == 'refs/heads/main'
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         slot-name: 'production'
         publish-profile: ${{ secrets.myLunchAndLearn_A5BB }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+    - name: Deploy to Azure WebApp
+      if: startsWith(github.ref, 'refs/heads/feature/')
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        slot-name: 'production'
+        publish-profile: ${{ secrets.myLunchAndLearn_A5BB }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
