@@ -34,7 +34,6 @@ jobs:
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
   deploy:
     runs-on: ubuntu-latest
-    environment: production
     needs: build
     steps:
     - name: Download artifact from build job
