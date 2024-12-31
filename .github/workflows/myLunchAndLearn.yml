@@ -54,7 +54,7 @@ jobs:
   deploy_production:
     runs-on: ubuntu-latest
     environment: 
-       name: 'production'
+       name: 'Production'
        url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     needs: build
     permissions:
