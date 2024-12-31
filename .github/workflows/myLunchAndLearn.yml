@@ -51,9 +51,9 @@ jobs:
       if: startsWith(github.ref, 'refs/heads/feature/')
       uses: azure/login@v2
       with:
-        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_191793F2470C49699D1F250F0F94EDD2 }}
-        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_13632E184B1C4C2C999F82EDB129D793 }}
-        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A43B44B067A64C8CB0C9AE2E9B46E63A }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_B2B558D5BBF449BCA713DE63D8148CD8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_50532CCFE5D244EF93CA4CAD7691DF6F }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E2294EFED5A54C1BAFB1691F26278DA0 }}
 
     
     - name: Deploy to Azure WebApp
