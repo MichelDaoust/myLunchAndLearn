@@ -61,6 +61,15 @@ jobs:
       with:
         name: webapp
         path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+    - name: Login to Azure
+      if: github.ref == 'refs/heads/main'
+      uses: azure/login@v2
+      with:
+        client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_191793F2470C49699D1F250F0F94EDD2 }}
+        tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_13632E184B1C4C2C999F82EDB129D793 }}
+        subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A43B44B067A64C8CB0C9AE2E9B46E63A }}
+
     - name: Deploy to Azure WebApp (Production)
       if: github.ref == 'refs/heads/main'
       uses: azure/webapps-deploy@v2
