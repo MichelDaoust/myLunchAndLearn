@@ -53,8 +53,14 @@ jobs:
 
   deploy_production:
     runs-on: ubuntu-latest
-    environment: production
+    environment: 
+       name: 'production'
+       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     needs: build
+    permissions:
+      id-token: write #This is required for requesting the JWT
+
+    
     steps:
     - name: Download artifact from build job
       uses: actions/download-artifact@v3
@@ -72,9 +78,9 @@ jobs:
 
     - name: Deploy to Azure WebApp (Production)
       if: github.ref == 'refs/heads/main'
+      id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         slot-name: 'production'
-        publish-profile: ${{ secrets.myLunchAndLearn_A5BB }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
